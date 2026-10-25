@@ -48,6 +48,25 @@ company capabilities, technical certification or project availability. The tools
 cannot read private drafts, send messages, book appointments, purchase services
 or approve a project. Read [AGENTS.md](./AGENTS.md) and the skill before use.
 
+## SDKs, CLI and local tests
+
+The official packages are published as `leviathan-public-content` version 1.0.1:
+
+- [JavaScript/TypeScript SDK and CLI on npm](https://www.npmjs.com/package/leviathan-public-content)
+- [Python SDK on PyPI](https://pypi.org/project/leviathan-public-content/)
+- [Client examples and error handling](./SDK.md)
+
+```sh
+npm install leviathan-public-content@1.0.1
+python -m pip install leviathan-public-content==1.0.1
+npx --package=leviathan-public-content@1.0.1 leviathan-content --help
+```
+
+To exercise the clients without production requests, clone this repository and
+run `npm test` (Node.js 20+) and `python test-py.py` (Python 3.10+). The tests use
+fictional responses served over loopback and need no account or API key. They
+verify client behavior, not physical engineering or live service availability.
+
 ## Official links
 
 - [Leviathan Systems](https://www.leviathansystems.co/)
