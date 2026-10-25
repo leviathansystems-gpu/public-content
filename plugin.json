@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "leviathan-public-content",
+  "version": "1.0.0",
+  "description": "Search and cite Leviathan Systems published infrastructure resources and read company service boundaries.",
+  "author": {
+    "name": "Leviathan Systems",
+    "url": "https://www.leviathansystems.co"
+  },
+  "homepage": "https://www.leviathansystems.co/developers/mcp",
+  "keywords": [
+    "mcp",
+    "physical-infrastructure",
+    "gpu-deployment",
+    "public-content"
+  ],
+  "repository": "https://github.com/leviathansystems-gpu/public-content"
+}
