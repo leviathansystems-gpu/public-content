@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leviathan-public-content"
+version = "1.0.1"
+description = "Official read-only Python client for Leviathan Systems published resources"
+readme = "SDK.md"
+requires-python = ">=3.10"
+license = "LicenseRef-Proprietary"
+authors = [{name = "Leviathan Systems"}]
+keywords = ["leviathan-systems", "gpu-deployment", "public-content"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://www.leviathansystems.co/developers/sdk"
+Documentation = "https://www.leviathansystems.co/developers"
+Source = "https://github.com/leviathansystems-gpu/public-content"
+Issues = "https://github.com/leviathansystems-gpu/public-content/issues"
+
+[tool.setuptools]
+py-modules = ["leviathan_public_content"]

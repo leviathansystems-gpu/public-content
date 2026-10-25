@@ -1,0 +1,55 @@
+{
+  "name": "leviathan-public-content",
+  "version": "1.0.1",
+  "description": "Official Leviathan Systems read-only public content SDK and CLI",
+  "type": "module",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "default": "./index.mjs"
+    }
+  },
+  "bin": {
+    "leviathan-content": "cli.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "homepage": "https://www.leviathansystems.co/developers/sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leviathansystems-gpu/public-content.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leviathansystems-gpu/public-content/issues"
+  },
+  "author": {
+    "name": "Leviathan Systems",
+    "url": "https://www.leviathansystems.co"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "leviathan-systems",
+    "mcp",
+    "gpu-deployment",
+    "public-content",
+    "cli"
+  ],
+  "files": [
+    "index.mjs",
+    "index.d.ts",
+    "cli.mjs",
+    "SDK.md",
+    "test-js.mjs"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "node --test test-js.mjs"
+  }
+}
