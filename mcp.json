@@ -4,6 +4,10 @@
     "leviathan-public-content": {
       "type": "streamable-http",
       "url": "https://www.leviathansystems.co/mcp"
+    },
+    "leviathan-planning": {
+      "type": "streamable-http",
+      "url": "https://www.leviathansystems.co/mcp/planning"
     }
   }
 }
