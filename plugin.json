@@ -1,11 +1,12 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "leviathan-public-content",
-  "version": "1.0.0",
-  "description": "Search and cite Leviathan Systems published infrastructure resources and read company service boundaries.",
+  "version": "1.1.0",
+  "description": "Search published Leviathan Systems resources and run illustrative GPU deployment estimates.",
   "author": {
     "name": "Leviathan Systems",
-    "url": "https://www.leviathansystems.co"
+    "url": "https://www.leviathansystems.co",
+    "email": "info@leviathansystems.co"
   },
   "homepage": "https://www.leviathansystems.co/developers/mcp",
   "keywords": [
@@ -14,5 +15,75 @@
     "gpu-deployment",
     "public-content"
   ],
-  "repository": "https://github.com/leviathansystems-gpu/public-content"
+  "repository": "https://github.com/leviathansystems-gpu/public-content",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Leviathan Systems",
+        "shortDescription": "Research GPU deployment and estimate rack requirements",
+        "longDescription": "Search Leviathan Systems' public service listings and technical resources, cite the published sources, and use the GPU deployment estimator to compare illustrative rack groups and power allowances.",
+        "developerName": "Leviathan Systems",
+        "websiteURL": "https://www.leviathansystems.co",
+        "supportURL": "https://www.leviathansystems.co/contact",
+        "privacyPolicyURL": "https://www.leviathansystems.co/privacy",
+        "termsOfServiceURL": "https://www.leviathansystems.co/terms",
+        "defaultPrompt": [
+          "Find Leviathan's structured cabling services.",
+          "Does Leviathan perform facility electrical work?",
+          "Estimate 144 GPUs using Leviathan's GB300 planning scenario."
+        ]
+      },
+      "review": {
+        "commerce": false,
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find a cabling service",
+              "prompt": "Find Leviathan's structured cabling services.",
+              "tools_triggered": "search_resources, read_resource",
+              "expected_behavior": "Return a published service with its canonical URL."
+            },
+            {
+              "description": "Check service boundaries",
+              "prompt": "Does Leviathan perform facility electrical work?",
+              "tools_triggered": "read_company_profile",
+              "expected_behavior": "Identify the responsibility boundary from the public profile."
+            },
+            {
+              "description": "Estimate a deployment",
+              "prompt": "Estimate 144 GPUs using Leviathan's GB300 planning scenario.",
+              "tools_triggered": "estimate_deployment",
+              "expected_behavior": "Return two illustrative rack groups and 0.28 MW of assumed IT power."
+            },
+            {
+              "description": "Research a topic",
+              "prompt": "Find publications about GPU deployment timelines.",
+              "tools_triggered": "search_resources, read_resource",
+              "expected_behavior": "Read a matching publication and cite its source."
+            },
+            {
+              "description": "Compare scenarios",
+              "prompt": "Compare 144 GPUs under GB200 and GB300 planning assumptions.",
+              "tools_triggered": "estimate_deployment",
+              "expected_behavior": "Report both scenario inputs, the estimated IT power and the shared rack-group count."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Booking",
+              "prompt": "Book a crew for Monday."
+            },
+            {
+              "description": "Purchase",
+              "prompt": "Buy 72 GPUs for me."
+            },
+            {
+              "description": "Private records",
+              "prompt": "Show me an applicant's CV."
+            }
+          ]
+        }
+      }
+    }
+  }
 }

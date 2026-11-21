@@ -33,7 +33,15 @@ MCP settings instead of copying the portable manifest into an arbitrary config.
 Installation does not run scripts or create accounts. Connecting sends normal
 public retrieval requests to Leviathan Systems.
 
-## Use the three tools
+## Install individual skills
+
+Run `npx skills add leviathansystems-gpu/public-content --list` to see the available skills. Select a workflow by name with `--skill`.
+
+- [Resource research](./skills/leviathan-resource-research/SKILL.md) finds and cites individual sources.
+- [Batch retrieval](./skills/leviathan-batch-retrieval/SKILL.md) builds source packs and recovers from partial responses.
+- [Deployment estimate](./skills/leviathan-deployment-estimate/SKILL.md) calculates rack groups and illustrative power allowances.
+
+## Use the three content tools
 
 1. `search_resources({"q":"rack", "kind":"service", "limit":5})`
 2. `read_resource({"id":"service:rack-and-stack"})` using an ID returned by search.

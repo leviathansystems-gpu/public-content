@@ -6,6 +6,7 @@ local executables or installation hooks. Do not request visitor or project data.
 - Use the remote MCP endpoint in `mcp.json`; obtain tool schemas using `tools/list`.
 - Search published titles with `search_resources`, then pass returned catalog IDs
   to `read_resource`. A missing Markdown body means follow the canonical HTML link.
+- Use the separate planning server for `estimate_deployment`. Send only the platform and GPU count, and include the returned assumptions in the result.
 - Read `read_company_profile` with `view: "boundaries"` before describing a
   Leviathan service. Educational content is not evidence of a company capability.
 - Cite the returned canonical URLs and preserve original source dates. Identify
